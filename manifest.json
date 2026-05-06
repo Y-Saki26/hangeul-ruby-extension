@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Hangeul Ruby",
+  "description": "Adds romanized ruby annotations to Hangeul text on web pages.",
+  "version": "0.1.0",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "Hangeul Ruby",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "romanize.js",
+        "content-script.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

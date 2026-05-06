@@ -1,0 +1,21 @@
+html[data-hangeul-ruby-show-mode="hover"] ruby.hangeul-ruby rt {
+  opacity: 0;
+}
+
+html[data-hangeul-ruby-show-mode="hover"] ruby.hangeul-ruby:hover rt {
+  opacity: 1;
+}
+
+ruby.hangeul-ruby {
+  ruby-position: over;
+}
+
+ruby.hangeul-ruby rt {
+  color: #2563eb;
+  font-size: 0.58em;
+  font-weight: 500;
+  line-height: 1;
+  opacity: 1;
+  transition: opacity 120ms ease;
+  user-select: none;
+}

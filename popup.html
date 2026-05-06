@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hangeul Ruby</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Hangeul Ruby</h1>
+      </header>
+
+      <label class="toggle-row">
+        <span>
+          <strong>ルビを表示</strong>
+          <small>ページ上のハングルにローマ字を付けます</small>
+        </span>
+        <input id="enabled" type="checkbox">
+      </label>
+
+      <section>
+        <h2>表示</h2>
+        <label>
+          <input name="showMode" type="radio" value="always">
+          常に表示
+        </label>
+        <label>
+          <input name="showMode" type="radio" value="hover">
+          ホバー時のみ
+        </label>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
