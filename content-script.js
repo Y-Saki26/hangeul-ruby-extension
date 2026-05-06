@@ -15,6 +15,7 @@
     enabled: true,
     showMode: "always"
   };
+  const HTML_NAMESPACE = "http://www.w3.org/1999/xhtml";
   const SKIP_TAGS = new Set([
     "SCRIPT",
     "STYLE",
@@ -85,6 +86,7 @@
     }
 
     return (
+      element.namespaceURI !== HTML_NAMESPACE ||
       SKIP_TAGS.has(element.tagName) ||
       element.isContentEditable ||
       element.closest("ruby, [data-hangeul-ruby='processed']")
@@ -227,9 +229,12 @@
   function removeRubyAnnotations() {
     const rubies = document.querySelectorAll("ruby[data-hangeul-ruby='processed']");
     for (const ruby of rubies) {
+      const parent = ruby.parentNode;
       ruby.replaceWith(document.createTextNode(ruby.firstChild ? ruby.firstChild.textContent : ""));
+      if (parent) {
+        parent.normalize();
+      }
     }
-    document.normalize();
   }
 
   /**
